@@ -1,21 +1,25 @@
 /*
 	File: Cfg_Functions.sqf
-	Author: John Doe, Kira, Brutalzic
+	Author: John Doe
 	Description: declaration des fonctions de la mission.
 */
 
 class CfgFunctions
 {
 	
-	class IVBC_Fonctions
+	class MRP_Fonctions
 	{
-		tag = "IVBC";
-		class Core
+		tag = "MRP";
+		class network
 		{
-			file = "Core\";
-			class test {};
+			file = "network\";
+			
 		};
-};
+		
+		
+		
+		
+	};
 	
 	
 };

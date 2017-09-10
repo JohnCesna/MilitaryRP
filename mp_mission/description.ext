@@ -1,6 +1,6 @@
 /*
 	File: description.ext
-	Author: John Doe, Kira, Brutalzic
+	Author: John Doe
 	Description: Paramettre generale
 */
 
@@ -8,7 +8,7 @@
 // xxxxxx Info Serveur xxxxxx
 // xxxxxxxxxxxxxxxxxxxxxxxxxx
 
-author = "AltisDev Team";// Autheur de la mission.
+author = "John Doe";// Autheur de la mission.
 onLoadName = ""; 
 onLoadMission = "";
 onLoadMissionTime = false;
