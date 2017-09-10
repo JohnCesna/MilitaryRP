@@ -1,0 +1,188 @@
+/*
+	File: description.ext
+	Author: John Doe, Kira, Brutalzic
+	Description: Paramettre generale
+*/
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxx Info Serveur xxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxx
+
+author = "AltisDev Team";// Autheur de la mission.
+onLoadName = ""; 
+onLoadMission = "";
+onLoadMissionTime = false;
+onLoadIntro = "";
+onLoadIntroTime = false;
+
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxx Serveur  xxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxx
+
+class Header
+{
+	gameType = RPG;// type de la mission.
+	minPlayers = 1;// nombre minimum de joueur supporter.
+	maxPlayers = 170;// nombre maximum de joueur supporter.
+};
+//---------------------------------
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxx Config a la Connection/Deconnection  xxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+joinUnassigned = 1;// place auto dans le lobby.
+skipLobby = 1; //supprimer le lobby 0 = false/ 1 = true
+briefing = 0;// active/desactive le briefing de la mission.
+debriefing = 0;// active/desactive le debriefing de la mission.
+
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxx Respawn  xxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxx
+
+respawn = "BASE";
+/*
+choix du type de respawn.
+
+0 or "NONE" - pas de respawn
+1 or "BIRD" - respawn en mouette
+2 or "INSTANT" - respawn au lieux de la mort.
+3 or "BASE" - respawn a la base.
+Require un marker nommé:
+respawn_west
+respawn_east
+respawn_guerrila
+respawn_civilian
+*/
+respawndelay = 30;// configure le temps avant respawn.
+respawnDialog = 0;// active/desactive la fenetre de score quand respawn = "BASE".
+respawnOnStart = -1;// desactive le respawn a la connection et desactive le script de respawn.
+respawnTemplates[] = {""};// respawn Templates.
+
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxx Systeme de revive Arma 3  xxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Revive = 0;
+
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxxxx Cadavres Manager xxxxxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+corpseManagerMode = 1;// choix du mod du gestionnaire de suppression des cadavres.
+
+corpseLimit = 1;// limite du nombre de cadavres avant suppresion.
+corpseRemovalMinTime = 0;// temps avant suppression des cadavre quand la limite est depasser.
+corpseRemovalMaxTime = 0;// temps maximum avant supression des cadavres en dessous de la limite.
+
+wreckManagerMode = 0;// choix du mod du gestionnaire de supprission des epaves.
+
+wreckLimit = 15;// limite du nombre d'epaves avant suppresion.
+wreckRemovalMinTime = 10;// temps avant suppression des epaves quand la limite est depasser.
+wreckRemovalMaxTime = 3600;// temps maximum avant supression des epaves en dessous de la limite.
+
+
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxx Mode de simulation de vol xxxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+forceRotorLibSimulation = 0;// active/desactive/force le mode de vole avancer.
+
+
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxx Parametre chat,vocal/ecrit xxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+disableChannels[] = {{0,true,true},{1,true,false},{2,true,false},{3,true,false},{4,true,false},{5,true,false},{6,true,false}};
+/* 
+disableChannels[] = {{channelID<number>, disableChat<bool>, disableVoice<bool>}};
+Channel number correspondence:
+0 = Global
+1 = Side
+2 = Command
+3 = Group
+4 = Vehicle
+5 = Direct
+6 = System
+*/
+
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxx Active/desactive IA xxxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+aiKills = 0;// active/desactive IA score.
+disabledAI = 1;// active/desactive IA lobby.
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxx Active/desactive deivers xxxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+onPauseScript[] = {};// script executer jeux en pause.
+enableItemsDropping = 0;// active/desactive le drop d'item dans l'eau.
+weaponPool = 0;// transfere d'equipement entre mission.
+enableDebugConsole = 1;// active/desactive la debug console.
+scriptedPlayer = 1;// supprime message de joueur non trouver.
+allowFunctionsLog = 1;// active/desactive les rpt dans les functions.
+disableRandomization[] = {"All"};// active/desactive les randoms dans le jeu "vehicule,pnj etc ...".
+allowFunctionsRecompile = 0;// active/desactive la recompilation des functions. ATTENTION ! Pour le DEV uniquement.
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxx Affichage xxxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+showCompass = 1;// active/desactive l'affichage du compas.
+showWatch = 1;// active/desactive l'affichage de la montre.
+showGroupIndicator = 0;// active/desactive l'affichage des membre du group sur le gps.
+showMap = 1;// active/desactive l'affichage de la map.
+showNotePad = 0;// active/desactive l'affichage du notepad.
+showGPS = 0;// active/desactive l'affichage du GPS.
+
+showHUD = 0;// active/desactive l'affichage le hud.
+
+/*
+showHUD[] = {
+	true,	// Scripted HUD (same as showHUD command)
+	true,	// Vehicle + soldier info
+	false,	// Vehicle radar [HIDDEN]
+	false,	// Vehicle compass [HIDDEN]
+	true,	// Tank direction indicator
+	true,	// Commanding menu
+	true,	// Group Bar
+	true,	// HUD Weapon Cursors
+	true	// HUD Squad Radar
+};
+*/
+
+
+// xxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxx UI xxxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxx
+
+#include "Dialog\MasterHandler.h"
+
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxx Mission parametres xxxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+#include "Config\Cfg_Configs.hpp"
+
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxx Mission fonctions xxxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+#include "Config\Cfg_Functions.hpp"
+#include "Config\Cfg_RemoteExec.hpp"
+//---------------------------------
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxx Mission debrifing xxxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#include "Config\Cfg_Debriefings.hpp"
+
